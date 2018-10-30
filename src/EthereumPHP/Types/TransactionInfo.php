@@ -33,7 +33,7 @@ class TransactionInfo
         $this->input = $response['input'];
         $this->nonce = hexdec($response['nonce']);
         $this->transactionIndex = hexdec($response['transactionIndex']);
-        $this->value = new Wei(hexdec($response['value']));
+        $this->value = new Wei(base_convert($response['value'], 16, 10));
         $this->v = $response['v'];
         $this->r = $response['r'];
         $this->s = $response['s'];
